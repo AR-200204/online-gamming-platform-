@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import Header from './components/Header'
-import HeroBanner from './components/HeroBanner'
 import CategoryFilter from './components/CategoryFilter'
 import GameGrid from './components/GameGrid'
 import GamePlayer from './components/GamePlayer'
@@ -29,20 +28,20 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       <Header searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-      <HeroBanner />
-      <main className="max-w-7xl mx-auto px-4 py-8">
+      
+      <main className="max-w-7xl mx-auto px-4 py-6">
         {/* Playable Games Section */}
-        <section className="mb-12">
-          <div className="flex items-center gap-3 mb-6">
+        <section className="mb-10">
+          <div className="flex items-center gap-3 mb-5">
             <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center">
               <span className="text-sm">▶</span>
             </div>
-            <h2 className="text-2xl font-bold text-white">Play Now - Free Games</h2>
+            <h2 className="text-2xl font-bold text-white">Play Now</h2>
             <span className="bg-green-500/20 text-green-400 text-xs px-3 py-1 rounded-full font-medium border border-green-500/30">
-              {playableGames.length} PLAYABLE
+              {playableGames.length} GAMES
             </span>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
             {playableGames.map((game) => (
               <GameCardInline key={game.id} game={game} onPlay={handlePlayGame} />
             ))}
@@ -70,7 +69,7 @@ function App() {
   )
 }
 
-// Inline GameCard for the playable section with bigger play button
+// Inline GameCard for the playable section
 function GameCardInline({ game, onPlay }: { game: Game; onPlay: (game: Game) => void }) {
   return (
     <div
@@ -87,47 +86,46 @@ function GameCardInline({ game, onPlay }: { game: Game; onPlay: (game: Game) => 
         
         {/* Play overlay */}
         <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/60 transition-all">
-          <div className="w-14 h-14 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-            <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+          <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+            <svg className="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
               <path d="M8 5v14l11-7z" />
             </svg>
           </div>
         </div>
 
         {/* Badges */}
-        <div className="absolute top-2 left-2 flex gap-1.5">
+        <div className="absolute top-1.5 left-1.5 flex gap-1">
           {game.isHot && (
-            <span className="bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-md">
-              🔥 HOT
+            <span className="bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded">
+              🔥
             </span>
           )}
           {game.isNew && (
-            <span className="bg-green-500 text-white text-xs font-bold px-2 py-0.5 rounded-md">
+            <span className="bg-green-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded">
               NEW
             </span>
           )}
         </div>
 
         {/* Type badge */}
-        <div className="absolute bottom-2 right-2 bg-black/70 backdrop-blur-sm text-white text-xs font-bold px-2 py-0.5 rounded-md">
-          {game.type === 'builtin' ? '🎮 Built-in' : '🌐 Online'}
+        <div className="absolute bottom-1.5 right-1.5 bg-black/70 backdrop-blur-sm text-white text-[10px] font-bold px-1.5 py-0.5 rounded">
+          {game.type === 'builtin' ? '🎮' : '🌐'}
         </div>
       </div>
 
       {/* Info */}
-      <div className="p-3">
-        <h4 className="font-bold text-white text-sm mb-1 truncate group-hover:text-green-300 transition-colors">
+      <div className="p-2">
+        <h4 className="font-bold text-white text-xs mb-0.5 truncate group-hover:text-green-300 transition-colors">
           {game.title}
         </h4>
-        <p className="text-xs text-gray-400 line-clamp-1">{game.description}</p>
-        <div className="flex items-center justify-between mt-2">
-          <div className="flex items-center gap-1 text-xs text-gray-400">
-            <svg className="w-3 h-3 text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-0.5 text-[10px] text-gray-400">
+            <svg className="w-2.5 h-2.5 text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
             </svg>
             <span>{game.rating}</span>
           </div>
-          <span className="text-xs text-green-400 font-medium">▶ Click to Play</span>
+          <span className="text-[10px] text-green-400 font-medium">▶ Play</span>
         </div>
       </div>
     </div>
