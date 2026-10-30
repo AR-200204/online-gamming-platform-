@@ -35,6 +35,7 @@
 <td width="50%">
 
 ### 🌐 Online Games
+- 🐍 GridRush (Multiplayer Snake .io)
 - 🏃 Neon Jump
 - 🏀 Basketball Target
 - 🎨 Color Block Away
@@ -56,7 +57,7 @@
 - 🏷️ **Category Filter** — Browse by genre (Action, Puzzle, Racing, etc.)
 - 🚫 **No Downloads** — Everything runs in-browser
 - 💯 **100% Free** — No subscriptions, no hidden fees
-- 🎯 **23+ Playable Games** — Mix of custom and embedded titles
+- 🎯 **24+ Playable Games** — Mix of custom and embedded titles
 
 ---
 
@@ -91,6 +92,7 @@
 
 | Game | Category | Players |
 |------|----------|---------|
+| 🐍 **GridRush** | Action/Adventure | 15.3K |
 | 🏃 Neon Jump | Action/Racing | 67.8K |
 | 🏀 Basketball Target | Sports | 89.2K |
 | 🎨 Color Block Away | Puzzle | 34.5K |

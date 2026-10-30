@@ -319,6 +319,22 @@ export const games: Game[] = [
     embedUrl: 'https://y8.com/embed/shape_race_webgl',
   },
 
+  // ===== FRIEND'S GAME =====
+  {
+    id: 217,
+    title: '🐍 GridRush - Multiplayer Snake',
+    rating: 94,
+    image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=464&h=261&fit=crop',
+    categories: ['Action', 'Adventure'],
+    isHot: true,
+    isNew: true,
+    players: '15.3K',
+    description: 'Multiplayer retro snake .io game! Compete with players worldwide in real-time!',
+    playable: true,
+    type: 'iframe',
+    embedUrl: 'https://gridrush.fun',
+  },
+
   // ===== DISPLAY-ONLY GAMES (coming soon) =====
   {
     id: 301,
